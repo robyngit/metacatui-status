@@ -1,7 +1,7 @@
 baseURL: '/'
 languageCode: 'en-us'
 title: 'MetacatUI Status Notifications'
-timeZone: 'America/Los_Angeles'
+timeZone: America/Los_Angeles
 enableRobotsTXT: false
 enableGitInfo: true
 params:

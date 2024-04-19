@@ -6,7 +6,7 @@ Pages to display in the rare case that the server(s) running MetacatUI are down.
 
 ## Quick! Update the status pages for all MetacatUI instances!
 
-In the [hugo.yaml](./hugo.yaml) file, update the "downSince" date time field that is under the "params" section. Set this to the date and time that the outage began, in the format "YYYY-MM-DDTHH:MM:SSZ" **In Pacific Time**.
+In the [hugo.yaml](./hugo.yaml) file, update the "downSince" date time field that is under the "params" section. Set this to the date and time that the outage began. \*
 
 Once this file is updated, GitHub actions will rebuild the site and deploy it to the gh-pages branch. The status pages will be updated within a few minutes.
 
@@ -51,7 +51,7 @@ hugo new name-of-new-instance.md
 - **homepage**: The URL of the homepage for the MetacatUI instance.
 - **emailContact**: The email address to contact for support. Optional.
 - **logo**: The filename of the logo image to display on the status page. The image goes in the `static/logos` directory.
-- **downSince**: Optional. This date and time will override the global "downSince" date and time in the `hugo.yaml` file. Use this field to specify a different date and time for when the MetacatUI instance went down. The format is "YYYY-MM-DDTHH:MM:SS" **In Pacific Time**.
+- **downSince**: Optional. This date and time will override the global "downSince" date and time in the `hugo.yaml` file. Use this field to specify a different date and time for when the MetacatUI instance went down. \*
 
 You can also add a custom message to the status page in markdown, below the front matter. This message will be displayed below the status message. If no custom message is required, then delete the example custom message from the markdown file.
 
@@ -66,3 +66,7 @@ hugo server
 Navigate to the new status page at http://localhost:1313/name-of-new-instance/
 
 5. Once you are satisfied with the changes, commit and push the changes to the repository. GitHub actions will rebuild the site and deploy it to the gh-pages branch. The status pages will be updated within a few minutes!
+
+## Time formats ⏰
+
+\* The date and time format for the "downSince" field is in the format `YYYY-MM-DDTHH:MM:SS`. For example, `2024-01-01T12:00:00`. Without a timezone specified, Hugo will interpret this as the timeZone set in `hugo.yaml` ("America/Los_Angeles"). To specify a different timezone, use the format `YYYY-MM-DDTHH:MM:SS-04:00` `YYYY-MM-DDTHH:MM:SSZ` for UTC.

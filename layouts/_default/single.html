@@ -1,4 +1,7 @@
 <!-- layouts/_default/single.html -->
+{{ $timeFormatHuman := "January 2, 2006 at 15:04 MST" }}
+{{ $timeFormatMachine := "2006-01-02T15:04:05.999-0700" }}
+
 <html>
 <head>
     <title>{{ .Title }}</title>
@@ -36,10 +39,10 @@
 
         {{ with $t }}
             {{ $t := time $t }}
-            {{ $datetime := $t.Format "2006-01-02T15:04:05.999-0700" }}
-            {{ $humanTime := $t.Format "January 2, 2006 at 15:04" }}
+            {{ $datetime := $t.Format $timeFormatMachine }}
+            {{ $humanTime := $t.Format $timeFormatHuman }}
             <p>
-                We've been down since <time datetime="{{ $datetime }}">{{ $humanTime }} PT</time>.
+                We've been down since <time datetime="{{ $datetime }}">{{ $humanTime }}</time>.
             </p>
         {{ end }}
 
@@ -50,9 +53,10 @@
     
     <footer>
         <p>
-            {{ $modDatetime := .Lastmod.Format "2006-01-02T15:04:05.999-0700" }}
-            {{ $modHumanTime := .Lastmod.Format "January 2, 2006 at 15:04" }}
-            This page was last updated on <time datetime="{{ $modDatetime }}">{{ $modHumanTime }} PT</time>.
+            <!-- last mod time given with timezone, convert to default time zone -->
+            {{ $modDatetime := .Lastmod.Format $timeFormatMachine }}
+            {{ $modHumanTime := .Lastmod.Format $timeFormatHuman }}
+            This page was last updated on <time datetime="{{ $modDatetime }}">{{ $modHumanTime }}</time>.
         </p>
     </footer>
 </body>
