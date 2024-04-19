@@ -3,14 +3,14 @@
 <head>
     <title>{{ .Title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ styles.css | relURL }}">
+    <link rel="stylesheet" href="{{ "styles.css" | relURL }}">
 </head>
 <body>
     
     <section class="box">
 
-        {{ with .Params.logo }}
-        <img class="logo" src="{{ logos/{{ . }} | relURL }}" alt="Logo">
+        {{ with $l := .Params.logo }}
+        <img class="logo" src="{{ $l | relURL }}" alt="Logo">
         {{ end }}
 
         <h1>{{ .Title }}</h1>
