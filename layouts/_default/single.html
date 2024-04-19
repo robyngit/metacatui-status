@@ -10,7 +10,7 @@
     <section class="box">
 
         {{ with $l := .Params.logo }}
-        <img class="logo" src="{{ $l | relURL }}" alt="Logo">
+        <img class="logo" src="{{ path.Join "logos" $l  | relURL }}" alt="Logo">
         {{ end }}
 
         <h1>{{ .Title }}</h1>
