@@ -1,0 +1,59 @@
+<!-- layouts/_default/single.html -->
+<html>
+<head>
+    <title>{{ .Title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    
+    <section class="box">
+
+        {{ with .Params.logo }}
+        <img class="logo" src="/logos/{{ . }}" alt="Logo">
+        {{ end }}
+
+        <h1>{{ .Title }}</h1>
+        <h2>🚧 We're currently experiencing technical difficulties. 🚧</h2>
+
+        <div class="content">
+
+        <p>
+            Our team is working hard to get things back to normal as soon as possible. Please check back later.
+            {{ with .Params.emailContact }} For any urgent matters, feel free to contact us at <a href="mailto:{{ . }}">{{ . }}</a>. {{ end }}
+        </p>
+        
+        {{ with .Content }}
+            {{ . }}
+        {{ end }}
+
+        {{/* The time that the incident started can be overridden in the front matter. If it's not set, we'll use the default value from the site configuration. */}}
+        
+        {{ $t := .Site.Params.downSince }}
+        {{ with .Params.downSince }}
+            {{ $t = . }}
+        {{ end }}
+
+        {{ with $t }}
+            {{ $t := time $t }}
+            {{ $datetime := $t.Format "2006-01-02T15:04:05.999-0700" }}
+            {{ $humanTime := $t.Format "January 2, 2006 at 15:04" }}
+            <p>
+                We've been down since <time datetime="{{ $datetime }}">{{ $humanTime }} PT</time>.
+            </p>
+        {{ end }}
+
+        </div>
+
+    </section>
+    
+    
+    <footer>
+        <p>
+            {{ $modDatetime := .Lastmod.Format "2006-01-02T15:04:05.999-0700" }}
+            {{ $modHumanTime := .Lastmod.Format "January 2, 2006 at 15:04" }}
+            This page was last updated on <time datetime="{{ $modDatetime }}">{{ $modHumanTime }} PT</time>.
+        </p>
+    </footer>
+</body>
+</html>

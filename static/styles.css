@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap');
+
+
+:root {
+
+    /* --blue-1: #ECF8FC; */
+    /* --blue-2: #CCF0FC; */
+    /* --blue-3: #99E1FA; */
+    /* --blue-5: #00A9E4; */
+    --blue-6: #0087B5;
+    /* --blue-7: #136682; */
+
+    --grey-1: #F8F9FA;
+    --grey-2: #F1F3F4;
+    /* --grey-3: #E8EAED; */
+    /* --grey-4: #BDC1C6; */
+    --grey-5: #80868B;
+    --grey-6: #5F6368;
+    --grey-7: #3C4043;
+    --grey-8: #202124;
+    
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Barlow', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--grey-8);
+    background: var(--grey-2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    margin: 1.5rem 0;
+    line-height: 1;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--grey-7);
+    margin: 0rem 0 1rem 0;
+    text-align: center;
+}
+
+a, a:visited {
+    color: var(--blue-6);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+p {
+    margin: 1rem 0;
+}
+
+footer p {
+    font-size: 0.8rem;
+    color: var(--grey-5);
+}
+
+.box {
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    border-radius: 1rem;
+    background: var(--grey-1);
+    color: var(--grey-6);
+    padding: 3rem 2.5rem;
+    margin: 3rem 1.5rem;
+    max-width: 45rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    display: block;
+    width: 7rem;
+}
