@@ -2,5 +2,6 @@ baseURL: ''
 languageCode: 'en-us'
 title: 'MetacatUI Status Notifications'
 timeZone: 'America/Los_Angeles'
+enableRobotsTXT: false
 params:
   downSince: '2024-01-18T15:00:00'
