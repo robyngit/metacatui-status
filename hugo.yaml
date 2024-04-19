@@ -1,4 +1,4 @@
-baseURL: ''
+baseURL: 'https://robyngit.github.io/metacatui-status/'
 languageCode: 'en-us'
 title: 'MetacatUI Status Notifications'
 timeZone: 'America/Los_Angeles'
