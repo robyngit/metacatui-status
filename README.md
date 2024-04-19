@@ -2,7 +2,9 @@
 
 Pages to display in the rare case that the server(s) running MetacatUI are down. There is one page for each MetacatUI instance that we manage.
 
-## Quick!Uupdate the status pages for all MetacatUI instances!
+![MetacatUI Status Pages](./static/metacatui-status-pages.png)
+
+## Quick! Update the status pages for all MetacatUI instances!
 
 In the [hugo.yaml](./hugo.yaml) file, update the "downSince" date time field that is under the "params" section. Set this to the date and time that the outage began, in the format "YYYY-MM-DDTHH:MM:SSZ" **In Pacific Time**.
 
